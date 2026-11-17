@@ -149,6 +149,12 @@ transition:background .25s,color .25s,transform .25s}
 .lang-toggle:active{transform:none}
 @media(prefers-reduced-motion:reduce){.lang-toggle{transition:none}}
 html[lang="fa"] :is(h1,h2,h3,p,blockquote){direction:rtl}
+html[lang="fa"] h2,
+html[lang="fa"] .sec-lead,
+html[lang="fa"] .quote blockquote,
+html[lang="fa"] .c-hero h1{margin-left:auto;margin-right:0}
+html[lang="fa"] .c-hero .actions{justify-content:flex-end}
+html[lang="fa"] .quote.big::before{left:auto;right:clamp(1.2rem,3.5vw,2.8rem)}
 `;
   document.head.appendChild(style);
 
@@ -209,5 +215,5 @@ html[lang="fa"] :is(h1,h2,h3,p,blockquote){direction:rtl}
 
   let saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  if (saved === 'fa') set(true); else paint(false);
+  if (saved === 'en') paint(false); else set(true);
 })();
